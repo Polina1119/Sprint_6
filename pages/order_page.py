@@ -1,18 +1,15 @@
 import allure
-from selenium.webdriver.support.wait import WebDriverWait
 
-from pages.main_page import BasePage
-from selenium.webdriver.support import expected_conditions as EC
+from pages.base_page import BasePage
 from locators.order_page_locators import OrderPageLocators as Order
 
 
 class OrderPage(BasePage):
     @allure.step('Скролл до кнопки Заказать')
     def scroll(self, button):
-        WebDriverWait(self.driver, 3).until(EC.visibility_of_element_located(button))
-        element = self.driver.find_element(*button)
-        self.driver.execute_script("arguments[0].scrollIntoView();", element)
-        return self.driver
+        self.find_element(button)
+        element = self.find_element(button)
+        return self.execute_script(element)
 
     @allure.step('Нажимаем кнопку Заказать')
     def click_on_button_order(self, button):

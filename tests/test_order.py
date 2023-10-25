@@ -1,7 +1,7 @@
 import pytest
 from locators.order_page_locators import OrderPageLocators as Order
 from locators.main_page_locators import MainPageLocators as Main
-from pages.main_page import BasePage
+from pages.base_page import BasePage
 from pages.order_page import OrderPage
 
 

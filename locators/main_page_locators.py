@@ -24,3 +24,4 @@ class MainPageLocators:
     QUESTION_6 = (By.ID, 'accordion__heading-5') # 6 вопрос
     QUESTION_7 = (By.ID, 'accordion__heading-6') # 7 вопрос
     QUESTION_8 = (By.ID, 'accordion__heading-7') # 8 вопрос
+    DZEN = (By.CLASS_NAME, 'desktop-base-header__logo-tA') # логотип Дзен

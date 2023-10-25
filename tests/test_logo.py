@@ -1,5 +1,6 @@
-from time import sleep
-from pages.main_page import MainPage, BasePage
+from locators.main_page_locators import MainPageLocators as Main
+from pages.main_page import MainPage
+from pages.base_page import BasePage
 
 
 class TestLogo:
@@ -9,9 +10,9 @@ class TestLogo:
         base_page.go_to_site()
         main_page.click_logo_yandex()
         main_page.go_to_dzen()
-        sleep(2)
+        base_page.find_element(Main.DZEN)
 
-        assert driver.current_url == 'https://dzen.ru/?yredirect=true'
+        assert base_page.current_url() == 'https://dzen.ru/?yredirect=true'
 
     def test_logo_scooter(self, driver):
         base_page = BasePage(driver)
@@ -19,5 +20,5 @@ class TestLogo:
         base_page.go_to_order_page()
         main_page.click_logo_scooter()
 
-        assert driver.current_url == 'https://qa-scooter.praktikum-services.ru/'
+        assert base_page.current_url() == 'https://qa-scooter.praktikum-services.ru/'
 
